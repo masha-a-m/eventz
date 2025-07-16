@@ -1,0 +1,75 @@
+:root {
+    --color-primary: #8B4513;
+    /* SaddleBrown */
+    --color-secondary: #A0522D;
+    /* Sienna */
+    --color-success: #28a745;
+    /* Bootstrap Green */
+}
+
+.bg-brown {
+    background-color: var(--color-primary);
+}
+
+.btn-brown {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.text-brown {
+    color: var(--color-primary);
+}
+
+.nav-item:hover {
+    background-color: #A0522D;
+}
+
+.signup:hover {
+    background-color: #8B4513;
+}
+
+.bg-brownd {
+    color: #fff; 
+    background-color: #885f42;
+    /* SaddleBrown */
+}
+.bg-brownd:hover {
+    background-color: #be8053;
+}
+
+.card img {
+    object-fit: contain;
+    /* transition: transform 0.3s ease; */
+}
+
+/* .card:hover img {
+    transform: scale(1.1);
+} */
+.eve {
+    color: #FF69B4;
+}
+
+.ntz {
+    color: #f8f8f8;
+}
+
+.search-section {
+        background-color: #8B4513;
+}
+
+.hero-section {
+    height: 400px;
+    position: relative;
+}
+
+/* .card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+} */
+
+footer {
+    background-color: #2f2f2f;
+}

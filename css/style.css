@@ -39,6 +39,56 @@
   opacity: 0;
 }
 
+
+/* Left Side Background Image */
+.bg-image {
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+/* Background image styling */
+.bg-image {
+    background-color: #f0f0f0;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.rounded-start-image {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+/* Custom Brown Color */
+.text-brown {
+    color: #8B4513;
+}
+
+.bg-brown {
+    background-color: #8B4513;
+}
+
+/* Remove border/shadow between columns */
+.rounded-end {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Curved Image (Optional if you want to keep img tag) */
+
+/* Underline Inputs */
+.form-control.border-bottom {
+    border: 0;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
 /* Border on top-left and bottom-left of right section */
 .col-md-6 {
     border-top-left-radius: 0;

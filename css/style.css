@@ -53,6 +53,30 @@
     background-color: #f0f0f0;
 }
 
+
+/* Hero Section */
+.bg-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+/* Category badge */
+.category-badge {
+    bottom: -15px;
+    font-size: 0.9rem;
+    width: 80%;
+    left: 10%;
+}
+
+.breadcrumb-section {
+    margin-top: 4rem;
+    /* Adjust as needed: 2rem, 5rem, etc. */
+}
+
+.breadcrumb-item {
+    font-size: 22px;
+}
 .object-fit-cover {
     object-fit: cover;
 }

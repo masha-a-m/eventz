@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+//book now button functionality
   function handleBooking() {
     // Simulate logged-in check
     const isLoggedIn = false; // Change this to true if user is logged in
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-
+//toggle password 
 document.addEventListener('DOMContentLoaded', function () {
   const togglePassword = document.getElementById('togglePassword');
   const passwordInput = document.getElementById('password');
@@ -36,4 +36,35 @@ document.addEventListener('DOMContentLoaded', function () {
     this.classList.toggle('fa-eye');
     this.classList.toggle('fa-eye-slash');
   });
+});
+
+
+// Form validation, save data to localStorage, loading spinner
+document.getElementById('signupForm')?.addEventListener('submit', function (e) {
+  e.preventDefault(); // Stop form from submitting normally
+
+  const fullName = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+
+  // Save user data (example)
+  const userData = {
+    name: fullName,
+    email: email,
+    isLoggedIn: true
+  };
+
+  localStorage.setItem('user', JSON.stringify(userData));
+
+  // Hide entire body content
+  document.body.style.display = 'none';
+
+  // Show fullscreen spinner
+  const spinnerOverlay = document.getElementById('spinnerOverlay');
+  spinnerOverlay.classList.remove('d-none');
+
+  // Simulate loading delay before redirect
+  setTimeout(() => {
+    window.location.href = 'landing-page-signedin.html'; // or dashboard.html
+  }, 2000); // 2 seconds delay
 });

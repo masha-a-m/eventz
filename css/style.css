@@ -10,6 +10,9 @@
 .bg-brown {
     background-color: var(--color-primary);
 }
+ .signup-bg{
+    background-color: var(--color-secondary);
+ }
 
 .btn-brown {
     background-color: var(--color-secondary);
@@ -28,6 +31,13 @@
     background-color: #8B4513;
 }
 
+#spinnerOverlay {
+  transition: opacity 0.5s ease;
+}
+
+#spinnerOverlay.fade-out {
+  opacity: 0;
+}
 
 /* Border on top-left and bottom-left of right section */
 .col-md-6 {

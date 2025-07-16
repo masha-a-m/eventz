@@ -28,6 +28,22 @@
     background-color: #8B4513;
 }
 
+
+/* Border on top-left and bottom-left of right section */
+.col-md-6 {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Password toggle */
+#togglePassword {
+    cursor: pointer;
+}
+
+
 .bg-brownd {
     color: #fff; 
     background-color: #885f42;

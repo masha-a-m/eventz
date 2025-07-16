@@ -62,9 +62,9 @@
     <section class="hero-section my-5 text-center position-relative">
         <img src="images/hanny-naibaho-aWXVxy8BSzc-unsplash.jpg" alt="Hero Image" class="w-100 h-100 object-fit-cover">
         <div class="position-absolute bottom-0 start-0 p-4 bg-dark text-white opacity-75 w-50">
-            <h2>Lambda Festival is Back!</h2>
+            <h2>Lambada Festival is Back!</h2>
             <p class="text-end mt-3">
-                <button class="btn btn-brown">Book Now</button>
+                <button class="btn btn-brown float-end" onclick="handleBooking()" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-name="Lambada Festival">Book Now</button>
             </p>
         </div>
     </section>
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3>Latest Events</h3>
-                <a href="#" class="text-decoration-none">View All</a>
+                <a href="all-events.html" class="text-decoration-none text-brown">View All</a>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-4">
@@ -83,7 +83,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Tech Innovators Summit</h5>
                             <p class="card-text">Date: Oct 15<br>Time: 5:00 PM</p>
-                            <button class="btn btn-brown float-end" onclick="handleBooking()">Book Now</button>
+                            <button class="btn btn-brown float-end" onclick="handleBooking()" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-name="Tech Innovators Summit">Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Creative Minds Meetup</h5>
                             <p class="card-text">Date: Oct 16<br>Time: 6:00 PM</p>
-                            <button class="btn btn-brown float-end" onclick="handleBooking()">Book Now</button>
+                            <button class="btn btn-brown float-end" onclick="handleBooking()" data-bs-toggle="modal" data-bs-target="#eventModal" data-event-name="Creative Minds Meetup">Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3>Browse by Categories</h3>
-                <a href="#" class="text-decoration-none text-brown">View All</a>
+                <a href="all-categories.html" class="text-decoration-none text-brown">View All</a>
             </div>
             <div class="row">
                 <!-- Technology -->
@@ -162,7 +162,7 @@
                 <div class="col-md-3 mb-3">
                     <div class="card text-center h-100">
                         <img src="images/europeana-5TK1F5VfdIk-unsplash.jpg" alt="Art" class="card-img-top mb-4"
-                            style=" object-fit: cover; max-height: 100%; cursor: pointer;">
+                            style=" object-fit: cover; max-height: 50%; cursor: pointer;">
                         <h5>Art</h5>
                     </div>
                 </div>
@@ -277,7 +277,6 @@
     </div>
 
     <!-- Modal -->
-    <!-- Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -286,7 +285,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>You are booking tickets for <strong>Creative Minds Meetup</strong>. Are you sure?</p>
+                    <p>You are booking tickets for <strong id="modalEventName">[Event Name]</strong>. Are you sure?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

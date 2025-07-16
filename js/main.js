@@ -107,3 +107,23 @@ document.getElementById('loginForm')?.addEventListener('submit', function (e) {
     window.location.href = 'landing-page-signedin.html';
   }, 2000);
 });
+
+
+
+
+// Listen to Bootstrap modal show event
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('eventModal');
+
+  modal.addEventListener('show.bs.modal', function (event) {
+    // Get the button that triggered the modal
+    const button = event.relatedTarget;
+
+    // Extract info from data-* attributes
+    const eventName = button.getAttribute('data-event-name');
+
+    // Update the modal's content
+    const modalEventName = modal.querySelector('#modalEventName');
+    modalEventName.textContent = eventName;
+  });
+});

@@ -115,6 +115,10 @@
 .tech{
     margin-top: 90px !important;
 }
+.categories{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .search{
     margin-top: 100px;
@@ -177,6 +181,35 @@
 
 
 
+.eventList1 {
+    margin: 0 auto;
+    /* Same as container */
+}
+
+.filter-item1 {
+    flex: 0 0 30%;
+    /* 3 per row */
+    max-width: 30%;
+    margin: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .filter-item {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-item {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+}
+
+
+
 
 /* Filter Bar */
 .filter-item {
@@ -211,7 +244,22 @@
 
 
 
+/* Event Details */
+.event-details {
+    max-width: 1000px;
+    margin: auto;
+}
 
+/* Badge */
+.badge.bg-brown {
+    background-color: #8B4513;
+}
+
+/* Ad Banner Placeholder */
+.ad-banner {
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+}
 
 /* Remove border/shadow between columns */
 .rounded-end {

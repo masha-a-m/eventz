@@ -61,6 +61,65 @@
     color: white;
 }
 
+.tech-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/technology.avif') no-repeat center center;
+        background-size: cover;
+        color: white;
+
+}
+.art-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/art.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.charity-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/charity.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.family-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/family.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.health-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/health.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.music-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/music.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.outdoor-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/outdoor.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.seminar-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/seminars.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.sport-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/sports.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.virtual-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/virtual.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+.tech{
+    margin-top: 90px !important;
+}
+
+.search{
+    margin-top: 100px;
+}
+
 /* Category badge */
 .category-card {
     position: relative;
@@ -115,6 +174,44 @@
 .bg-brown {
     background-color: #8B4513;
 }
+
+
+
+
+/* Filter Bar */
+.filter-item {
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.filter-item.active {
+    font-weight: bold;
+}
+
+.filter-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8B4513;
+}
+
+#filterBar{
+    margin-top: 100px !important;
+}
+/* Scrollable filter bar on small screens */
+.filter-item {
+    white-space: nowrap;
+}
+
+
+
+
+
 
 /* Remove border/shadow between columns */
 .rounded-end {

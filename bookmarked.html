@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Profile - Eventz</title>
+    <title>Bookmarks - Eventz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet"
@@ -26,7 +26,7 @@
                 <ul class="navbar-nav d-flex gap-4">
                     <li class="nav-item"><a class="nav-link text-white fs-6 mr-4" href="latest-events.html">Events</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-white fs-6 mr-4" href="your-events.html">Your
+                    <li class="nav-item"><a class="nav-link text-white fs-6 mr-4" href="bookmarked.html">Your
                             Events</a></li>
                     <li class="nav-item"><a class="nav-link text-white fs-6" href="#">About Us</a></li>
                     <li class="nav-item"><a class="nav-link text-white fs-6" href="#">Organizers</a></li>
@@ -51,47 +51,12 @@
         </div>
     </nav>
 
-    <!-- Profile Section -->
-    <section class="profile py-5">
+    <!-- My Bookmarked Events -->
+    <section class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-user-circle fa-5x text-brown me-4"></i>
-                                <div>
-                                    <h4 class="mb-1" id="profileName">Loading...</h4>
-                                    <p class="text-muted mb-0" id="profileUsername">Loading...</p>
-                                    <p class="text-muted" id="profileEmail">Loading...</p>
-                                </div>
-                            </div>
-
-                            <h5>Edit Profile</h5>
-                            <form id="profileForm" class="mt-3">
-                                <div class="mb-3">
-                                    <label for="fullName" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="fullName"
-                                        placeholder="Enter your full name">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username"
-                                        placeholder="Choose your username">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter your email"
-                                        disabled>
-                                </div>
-
-                                <button type="submit" class="btn btn-success mt-3">Save Changes</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="text-center mb-4">My Bookmarked Events</h2>
+            <div id="bookmarkedEvents" class="row g-4">
+                <!-- Bookmarked event cards will appear here -->
             </div>
         </div>
     </section>
@@ -166,51 +131,11 @@
         crossorigin="anonymous"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js "></script>
-        <script src="js/main.js"></script>
+    <script src="js/event.js"></script>
+
     <script>
-        // Load profile data on page load
-        window.addEventListener('DOMContentLoaded', loadProfile);
-
-        // Load user from localStorage
-        function loadProfile() {
-            const user = JSON.parse(localStorage.getItem('user'));
-
-            if (user && user.isLoggedIn) {
-                document.getElementById('profileName').textContent = user.name;
-                document.getElementById('profileUsername').textContent = user.username;
-                document.getElementById('profileEmail').textContent = user.email;
-
-                document.getElementById('fullName').value = user.name;
-                document.getElementById('username').value = user.username;
-                document.getElementById('email').value = user.email;
-            } else {
-                window.location.href = 'login.html';
-            }
-        }
-
-        // Save changes to localStorage
-        document.getElementById('profileForm')?.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const updatedUser = {
-                isLoggedIn: true,
-                name: document.getElementById('fullName').value.trim(),
-                username: document.getElementById('username').value.trim(),
-                email: document.getElementById('email').value.trim()
-            };
-
-            // Save to localStorage
-            localStorage.setItem('user', JSON.stringify(updatedUser));
-
-            // Show success message
-            alert("Profile updated successfully!");
-        });
-
-        // Logout function
-        function logout() {
-            // Simulate logout (you can add more logic later)
-            window.location.href = 'login.html';
-        }
+        // Load bookmarked events on page load
+        window.addEventListener('DOMContentLoaded', loadBookmarkedEvents);
     </script>
 </body>
 

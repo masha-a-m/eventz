@@ -231,5 +231,27 @@ const eventData = {
     organizer: "Canvas Arts",
     price: "Free",
     description: "Mariposa Art is a community-driven event that showcases local talent and promotes creativity. This event is free and open to all ages. Explore the exhibits, join a live painting demo, or take a guided tour with the artists."
-  }
+  },
+   health1: {
+    title: "Biba Donor Centre",
+    date: "Sep 10, 2025",
+    time: "10:00 AM",
+    location: "Donor Centre, City",
+    category: "Health",
+    image: "images/health.avif",
+    organizer: "Abi and Co",
+    price: "Free",
+    description: "Mariposa Art is a community-driven event that showcases local talent and promotes creativity. This event is free and open to all ages. Explore the exhibits, join a live painting demo, or take a guided tour with the artists."
+  },
+  health2: {
+    title: "Abi Health Facility",
+    date: "Nov 10, 2025",
+    time: "10:00 AM",
+    location: "Abi Health",
+    category: "Health",
+    image: "images/health.avif",
+    organizer: "Abi Health",
+    price: "Free",
+    description: "Mariposa Art is a community-driven event that showcases local talent and promotes creativity. This event is free and open to all ages. Explore the exhibits, join a live painting demo, or take a guided tour with the artists."
+}
 };

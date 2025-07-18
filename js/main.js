@@ -127,3 +127,31 @@ document.addEventListener('DOMContentLoaded', function () {
     modalEventName.textContent = eventName;
   });
 });
+
+
+
+
+function loadProfile() {
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  if (user && user.isLoggedIn) {
+    document.getElementById('profileName').textContent = user.name;
+    document.getElementById('profileUsername').textContent = user.username;
+    document.getElementById('profileEmail').textContent = user.email;
+
+    document.getElementById('fullName').value = user.name;
+    document.getElementById('username').value = user.username;
+    document.getElementById('email').value = user.email;
+  } else {
+    window.location.href = 'login.html';
+  }
+}
+
+function logout() {
+  // You can clear specific keys or all user data
+  // localStorage.removeItem('user');
+  window.location.href = 'login.html';
+}
+
+
+

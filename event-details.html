@@ -26,7 +26,7 @@
                 <ul class="navbar-nav d-flex gap-4">
                     <li class="nav-item"><a class="nav-link text-white fs-6 mr-4" href="latest-events.html">Events</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-white fs-6 mr-4" href="your-events.html">Your
+                    <li class="nav-item"><a class="nav-link text-white fs-6 mr-4" href="bookmarked.html">Your
                             Events</a></li>
                     <li class="nav-item"><a class="nav-link text-white fs-6" href="#">About Us</a></li>
                     <li class="nav-item"><a class="nav-link text-white fs-6" href="#">Organizers</a></li>
@@ -39,7 +39,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -101,11 +101,12 @@
     
             <!-- Bookmark & Book Now -->
             <div class="d-flex justify-content-center align-items-center mb-4 gap-5">
-                <div class="d-flex align-items-center">
-                    <i class="far fa-bookmark fa-lg text-brown me-2"></i>
-                    <span>Save Event</span>
+                <div class="d-flex align-items-center" id="bookmarkBtn" onclick="toggleBookmark()">
+                    <i class="far fa-bookmark fa-lg text-brown me-2" id="bookmarkIcon"></i>
+                    <span id="bookmarkText">Save Event</span>
                 </div>
-                <button class="py-2 border-0 bg-brown text-white px-4" onclick="bookEvent('${eventId}')">Book Now</button>
+                <a href="book-event.html?event=tech1" class="py-2 border-0 bg-brown text-white px-4" id="bookNowBtn">Book Now</a>
+                <!-- <button class="py-2 border-0 bg-brown text-white px-4" onclick="bookEvent('${eventId}')">Book Now</button> -->
             </div>
     
             <!-- Ad Placeholder -->
@@ -237,6 +238,8 @@
             const event = eventData[eventId];
 
             // Update DOM
+
+            document.getElementById("bookNowBtn").setAttribute("href", `book-event.html?event=${eventId}`);
             document.getElementById("event-title").textContent = event.title;
 
             document.getElementById("event-date").innerHTML = `<i class="far fa-calendar-alt text-brown me-2"></i>${event.date}`;
@@ -260,8 +263,37 @@
 
         function bookEvent(eventId) {
                 localStorage.setItem("selectedEvent", eventId);
-                window.location.href = "booking.html";
+                window.location.href = "book-event.html";
             }
+        // Bookmark Toggle
+            function toggleBookmark() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const eventId = urlParams.get('event');
+
+                if (!eventId) return;
+
+                const bookmarkedEvents = JSON.parse(localStorage.getItem('bookmarkedEvents') || '[]');
+
+                const icon = document.getElementById("bookmarkIcon");
+                const text = document.getElementById("bookmarkText");
+
+                const index = bookmarkedEvents.indexOf(eventId);
+
+                if (bookmarkedEvents.includes(eventId)) {
+                    icon.classList.remove("far");
+                    icon.classList.add("fas");
+                    text.textContent = "Saved";
+                } else {
+                    icon.classList.remove("fas");
+                    icon.classList.add("far");
+                    text.textContent = "Save Event";
+                }
+
+                // Save updated list
+                localStorage.setItem("bookmarkedEvents", JSON.stringify(bookmarkedEvents));
+            }
+
+            
     </script>
     
 </body>
